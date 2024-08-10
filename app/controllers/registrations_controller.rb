@@ -10,7 +10,7 @@ class RegistrationsController < ApplicationController
       if @user.save
         redirect_to root_path, notice: "Successfully created new user"
       else
-        flash[:alert] = "New User Not Created"
+        #flash[:alert] = "New User Not Created"
         render :new
       end
 
