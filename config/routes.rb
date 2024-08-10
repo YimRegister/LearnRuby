@@ -2,8 +2,12 @@ Rails.application.routes.draw do
   # mainpage
   
   
-  # GET /about page
+  # GET pages
   get "about", to: "about#index"
+  get "sign_up", to: "registrations#new"
+
+  # POST
+  post "sign_up", to: "registrations#create"
   
   root to: "main#index"
   
