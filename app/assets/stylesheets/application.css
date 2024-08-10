@@ -13,3 +13,13 @@
  *= require_tree .
  *= require_self
  */
+
+.nav-link {
+    color:teal;
+    
+ }
+ .nav-link:hover {
+    color:lightblue;
+    
+ }
+
