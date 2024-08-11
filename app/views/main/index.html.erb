@@ -1,9 +1,11 @@
 
 <div class="d-flex align-items-center justify-content-center myfade">
 <div>
-<h1 style="color:lightblue; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; ">Welcome!</h1>
+<h1 style='color:lightblue; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; '>Welcome!</h1>
 
 <h4 style = "padding-bottom:15%;"><em> I'm learning Ruby. </em></h4>
+
+
 
 <div class="mt-3">
 <%= link_to "Log In", log_in_path, class: "btn btn-outline-dark" %>
@@ -13,8 +15,27 @@
 
 <%= image_tag("foaicbk_cover.png", :style => "width:50%; margin-left:10%;") %>
 
-          
+ </div>    
 
 
 
+
+
+<div class = "">
+
+
+<%if @user %>
+    Logged in as: <%= @user.email %>
+    
+    <%= button_to "Logout", logout_path, method: :delete %>
+<%end%>
+
+<div class="container" style="width:70%;">
+<h3>What am I looking at?</h3>
+<p>
+ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean placerat ligula vitae nisi ultricies maximus. In iaculis a odio a ullamcorper. Quisque venenatis aliquam lorem quis convallis. Morbi dapibus ac purus eget placerat. Morbi non enim efficitur, venenatis justo et, dictum mi. Ut mollis ut justo sit amet congue. Vivamus dolor lacus, venenatis at vestibulum nec, imperdiet at ipsum. Curabitur porta venenatis est. Sed dictum arcu vitae urna blandit, sit amet venenatis orci sodales.
+ </p>  
+ </div>
 </div>
+
+

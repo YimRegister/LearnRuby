@@ -4,11 +4,21 @@ Rails.application.routes.draw do
   
   # GET pages
   get "about", to: "about#index"
+
   get "sign_up", to: "registrations#new"
-   get "log_in", to: "registrations#login"
+  post "sign_up", to: "registrations#create"
+
+  get "log_in", to: "sessions#new"
+  post "log_in", to: "sessions#create"
+  
+
+  delete "logout", to: "sessions#destroy"
 
   # POST
-  post "sign_up", to: "registrations#create"
+  
+
+  # DELETE
+  
 
   root to: "main#index"
   
