@@ -1,0 +1,7 @@
+<h1>Password#reset</h1>
+
+<p>
+  <%= @greeting %>, reset your password!
+</p>
+
+<%= link_to "Reset Password", password_reset_edit_url(token: @token) %>

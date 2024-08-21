@@ -1,0 +1,100 @@
+
+<div class="container ">
+  <h1 class="text-center mb-2 ">Open AI Image Generation</h1>
+  <center><%= image_tag("lilbot.gif", :style => "width:6%;") %></center>
+
+  
+  <!-- Centered form -->
+  <div class="d-flex justify-content-center align-items-center display:flex">
+
+    <div class="col-md-4 m-3 align-self-baseline">
+      <div class="rounded p-4 bg-light">
+        <!-- Form for input prompt
+        <form id="generate-form">
+          <div class="form-group">
+            <label for="noun" class="mb-2">Noun:</label>
+            <input type="text" class="form-control mb-3" id="noun" name="noun" placeholder="E.g., 'A robot'">
+            <label for="descriptor" class="mb-2">Descriptor:</label>
+            <input type="text" class="form-control mb-3" id="descriptor" name="descriptor" placeholder="E.g., 'with glasses'">
+            <label for="noun" class="mb-2">Verb:</label>
+            <input type="text" class="form-control mb-3" id="verb" name="verb" placeholder="E.g., 'learning to code'">
+            
+          </div>-->
+          
+          <!--<div class="d-grid gap-2">-->
+            <!-- Generate Button -->
+            <!--<button id="generate_imageplus" type="submit" class="btn btn-primary btn-block">Generate Image</button>-->
+            <!-- Display area for generated image -->
+            <!--<div class="mt-4 text-center" id="generated-img">-->
+              <!-- Image will be displayed here -->
+
+             
+            
+
+           <!-- </div>
+          </div>
+        </form>-->
+
+    <%= form_with url: aiplus_path, data:{"data-turbo-track": "reload"} do |form| %>
+    <div class="mb-3">
+
+        <%= form.label :noun %>
+        <%= form.text_field :noun , class: "form-control", placeholder:"E.g. a robot"%>
+
+    </div>
+
+    <div class="mb-3">
+
+        <%= form.label :descriptor %>
+        <%= form.text_field :descriptor , class: "form-control", placeholder:"E.g. with glasses"%>
+
+    </div>
+
+    <div class="mb-3">
+
+        <%= form.label :verb %>
+        <%= form.text_field :verb , class: "form-control", placeholder:"E.g. learning to code"%>
+
+    </div>
+
+    <div class="mb-3">
+    
+    <%= form.submit "Generate Image", id: "generate_imageplus",class: "btn btn-primary"%>
+    </div>
+    
+</div>
+
+<% end%>
+
+
+     
+    </div>
+    <div class="m-3">
+    <%= render partial: "shared/prompt" if params[:noun].present?%>
+    <%= image_tag("#{@result}", width:"256px;") %><br>
+
+    <div>
+
+    <%= form_with model: @image, data: { turbo: false }, url: save_image_path, method: :post do |form| %>
+
+    <div class="mb-3">
+        <%= form.label :title %>
+        <%= form.text_field :title, class: "form-control",placeholder: "My AI Image" %>
+       
+        <%= form.hidden_field :url, :value => "#{@result}" %>
+
+    </div>
+
+    <div class="mb-3">
+        
+        <%= form.submit "Save Image", class: "btn btn-primary" %>
+    </div>
+
+<% end %>
+    </div>
+
+
+   
+    </div>
+  </div>
+</div>

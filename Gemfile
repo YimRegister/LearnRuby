@@ -65,3 +65,10 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+#open AI
+gem "ruby-openai"
+
+gem "open-uri"
+
+gem "paperclip"

@@ -1,0 +1,33 @@
+<div class="container ">
+  <h1 class="text-center mb-2 ">AI Image Generator</h1>
+  <center><%= image_tag("lilbot.gif", :style => "width:6%;") %></center>
+
+  
+  <!-- Centered form -->
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="rounded p-4 bg-light">
+        <!-- Form for input prompt -->
+        <form id="generate-form">
+          <div class="form-group">
+            <label for="prompt" class="mb-2">Enter your prompt:</label>
+            <input type="text" class="form-control mb-3" id="prompt" name="prompt" placeholder="E.g., 'A robot playing video games'">
+
+          </div>
+          
+          <div class="d-grid gap-2">
+            <!-- Generate Button -->
+            <button id="generate_image" type="submit" class="btn btn-primary btn-block">Generate Image</button>
+            <!-- Display area for generated image -->
+            <div class="mt-4 text-center" id="generated-img">
+              <!-- Image will be displayed here -->
+
+              <%= render partial: "shared/prompt" %>
+              <%= image_tag("#{@result}", width:"250px;") %>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,6 @@
+<div class="alert alert-info" role="alert">
+  <h4 class="alert-heading">Nice job!</h4>
+  <p>Your prompt:  <%= content_tag(:b, "' " + "#{@prompt}" + "'")%></p>
+  <hr>
+  <%= link_to "💡 Tips on making an even better prompt.", tips_path, :class => "nav-link" %>
+</div>
