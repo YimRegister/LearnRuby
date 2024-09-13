@@ -12,6 +12,10 @@ Rails.application.routes.draw do
   get "aiplus", to: "aiplus#generate_imageplus"
   post "aiplus", to: "aiplus#index"
   
+  get "amazonbedrock", to: "amazonbedrock#index"
+  get "create_image", to: "amazonbedrock#create_image"
+  post "create_image", to: "amazonbedrock#create_image"
+
 
   get "sign_up", to: "registrations#new"
   post "sign_up", to: "registrations#create"
@@ -27,6 +31,7 @@ Rails.application.routes.draw do
   post "log_in", to: "sessions#create"
 
   get "dashboard", to: "dashboard#index"
+  post "deleteimage", to: "dashboard#destroy"
   delete "deleteimage", to: "dashboard#destroy"
 
   get "password", to: "passwords#edit"

@@ -21,11 +21,11 @@
     <% @images.each do |image| %>
       <tr>
         <td><%= "\"#{image.title}\"" %></td>
-        <td><%= image_tag(image.url, class:"img-thumbnail rounded mx-auto d-block", :align=> "left",style:"width:200px;") %></td>
+        <td><%= image_tag("https://ai-images-promptlab.s3.amazonaws.com/"+"#{image.url}", class:"img-thumbnail rounded mx-auto d-block", :align=> "left",style:"width:200px;") %></td>
         <td><%= button_to "Edit", edit_image_titles_path(image),:class => "btn btn-outline-dark m-1" %></td>
-        <td><%= button_to "Delete", deleteimage_path(:id => image.id), method: :delete ,:class => "btn btn-outline-dark m-1"%></td>
-        
-      </tr>
+        <td><%= button_to 'Delete', deleteimage_path(action: :delete, id: image.id),:class => "btn btn-outline-dark m-1",
+  data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} %></td>
+         </tr>
     <% end %>
   </tbody>
 </table>

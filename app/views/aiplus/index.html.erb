@@ -59,7 +59,7 @@
 
     <div class="mb-3">
     
-    <%= form.submit "Generate Image", id: "generate_imageplus",class: "btn btn-primary"%>
+    <%= form.submit "Generate Image", id: "generate_imageplus",class: "btn btn-primary", onclick:"document.body.style.cursor='wait'; return true;"%>
     </div>
     
 </div>
@@ -87,7 +87,7 @@
 
     <div class="mb-3">
         
-        <%= form.submit "Save Image", class: "btn btn-primary" %>
+        <%= form.submit "Save Image", class: "btn btn-primary"%>
     </div>
 
 <% end %>

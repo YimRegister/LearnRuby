@@ -9,7 +9,7 @@ class DashboardController < ApplicationController
     end
 
     def destroy
-        puts "DELETING"
+        
         @image = Image.find(params[:id])
         @image.destroy
         flash[:notice] = "Image successfully deleted"

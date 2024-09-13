@@ -72,3 +72,9 @@ gem "ruby-openai"
 gem "open-uri"
 
 gem "paperclip"
+
+gem "ruby-amazon-bedrock", "~> 0.2.3"
+gem "aws-sdk-bedrockruntime"
+gem "aws-sdk-s3"
+gem "pug-rails", "~> 3.0.0"
+gem 'jquery-rails'

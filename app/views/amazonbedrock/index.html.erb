@@ -1,0 +1,19 @@
+<%= form_with url: create_image_path(input: params[:input]) do |form| %>
+    
+
+    <div class="mb-3">
+        <%= form.label :input %>
+        <%= form.text_field :input,class: "form-control", placeholder: "e.g. a robot holding a kitten"%>
+    </div>
+
+    <div class="mb-3">
+    
+    <%= form.submit "Create Image", class: "btn btn-primary" %>
+    </div>
+
+    <div>
+    <%= image_tag("#{@result}", width:"256px;") %><br>
+
+    </div>
+
+<% end%>

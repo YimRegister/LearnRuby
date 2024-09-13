@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('generate_imageplus').addEventListener('click', function(event) {
         event.preventDefault(); // Prevent default form submission
+        
         const noun = document.getElementById('noun').value;
         const descriptor = document.getElementById('descriptor').value;
         const verb = document.getElementById('verb').value;
